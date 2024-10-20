@@ -1,9 +1,11 @@
 START
 const k;
+let i;
+let j;
 read(k);
-for ( let i=2; i < k; i++ ){
+for ( i=2; i < k; i++ ){
 bool isPrime=”true”;
-for (  let j=3; j< k*k; j++ ){
+for (  j=3; j< k*k; j++ ){
 	if ( i%j===0 ) then
 		isPrime=”false”;
 }
