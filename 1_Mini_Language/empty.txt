@@ -8,7 +8,7 @@ Language specification:
 2. Lexic:
     a. Operators : +, -, *,  /,  =, >=, <=, <, >, !=
     b. Separators :  ;, :, {}, [], space
-    c. Reserved Words : var, const, int, bool, do, if, else, then,  while, read,  write,  begin, end, program
+    c. Reserved Words : var, const, let, int, bool, do, if, else, then,  while, for, read,  write,  START, END
     d. Identifiers : sequence of letters (a-z) and digits (0-9), where the first character must be a letter. The rule is:
                 identifier ::= letter | letter  {letter | digit}
                 letter ::= "a" | "b" | "c" | ... | "z"
