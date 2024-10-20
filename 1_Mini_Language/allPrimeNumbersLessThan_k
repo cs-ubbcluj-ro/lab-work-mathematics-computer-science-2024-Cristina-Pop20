@@ -1,0 +1,13 @@
+START
+const k;
+read(k);
+for ( let i=2; i < k; i++ ){
+bool isPrime=”true”;
+for (  let j=3; j< k*k; j++ ){
+	if ( i%j===0 ) then
+		isPrime=”false”;
+}
+if (isPrime===”true”) then
+	write(i);
+}
+END
