@@ -20,7 +20,7 @@ Language specification:
 3. Sintax
     program ::= “START" decllist ";" cmpdstmt "END"
     decllist ::= declaration | declaration ";" decllist
-    declaration ::= type "=" identifier ";" 
+    declaration ::= type identifier ";" 
     type ::="int" |"bool"|"var"|"const"|"let"
     stmtlist ::= stmt | stmt ";" stmtlist
     stmt ::= assignment | iostmt | ifstmt | forstmt
