@@ -1,0 +1,38 @@
+File Overview:
+
+The grammar.txt file defines the syntax of the JavaScript-like minilanguage in a CFG format.
+Non-terminals are enclosed in angle brackets (<>).
+Terminals are either keywords (e.g., "START") or symbolic characters (=).
+Rules are separated by the ::= operator, with alternations (|) providing choices.
+  
+Top-Level Structure:
+
+<program> is the entry point, defining the entire structure of the program.
+It starts with "START", includes a declaration list (<decllist>) and compound statements (<cmpdstmt>), and ends with "END".
+Declarations:
+
+The <decllist> defines multiple <declaration> entries, each specifying a <type> and an <identifier>.
+Types include "int", "bool", and others.
+  
+Statements:
+
+<stmt> defines possible statements: assignments, input/output (read/write), conditional (if), or loop (for) constructs.
+The <stmtlist> allows a sequence of statements.
+Expressions and Operators:
+
+<expression> supports arithmetic with +, and <term> includes * and %.
+Conditions use comparison operators like == and ===.
+  
+Identifiers and Constants:
+
+<identifier> follows the rule: starts with a <letter> and is followed by any combination of letters and digits.
+<int_const> represents non-negative integers.
+<bool_const> includes "true" and "false".
+  
+Optional Braces:
+
+<opt_brace> allows braces {} in if and else clauses to be optional.
+  
+Relations:
+
+<relation> supports all comparison operators defined in the specification.
