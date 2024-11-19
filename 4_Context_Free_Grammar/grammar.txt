@@ -1,0 +1,48 @@
+# Context-Free Grammar (CFG) for the JavaScript-like MiniLanguage
+
+# Non-terminal symbols are enclosed in angle brackets <>
+# Terminal symbols are written in lowercase or enclosed in quotes ''
+# Alternation (choices) is denoted by the pipe '|'
+# Productions are written as <Non-terminal> ::= <Production>
+
+<program> ::= "START" <decllist> ";" <cmpdstmt> "END"
+
+<decllist> ::= <declaration> | <declaration> ";" <decllist>
+
+<declaration> ::= <type> <identifier> ";"
+
+<type> ::= "int" | "bool" | "var" | "const" | "let"
+
+<cmpdstmt> ::= <stmtlist>
+
+<stmtlist> ::= <stmt> | <stmt> ";" <stmtlist>
+
+<stmt> ::= <assignment> | <iostmt> | <ifstmt> | <forstmt>
+
+<assignment> ::= <identifier> "=" <expression> ";"
+
+<iostmt> ::= "read" "(" <expression> ")" ";" | "write" "(" <expression> ")" ";"
+
+<ifstmt> ::= "if" "(" <condition> ")" "then" <opt_brace> <stmtlist> <opt_brace> <else_clause>
+<else_clause> ::= "else" <opt_brace> <stmtlist> <opt_brace> | ""
+
+<opt_brace> ::= "{" | "" | "}"
+
+<condition> ::= <expression> <relation> <expression>
+
+<relation> ::= "=" | "!=" | "<" | "<=" | ">" | ">=" | "==" | "==="
+
+<forstmt> ::= "for" "(" <condition> ")" "{" <stmtlist> "}"
+
+<expression> ::= <expression> "+" <term> | <term>
+<term> ::= <term> "*" <factor> | <term> "%" <factor> | <factor>
+<factor> ::= <identifier> | <int_const> | <bool_const> | "(" <expression> ")"
+
+<identifier> ::= <letter> | <letter> <identifier_tail>
+<identifier_tail> ::= <letter> | <digit> | <identifier_tail> <letter> | <identifier_tail> <digit>
+
+<int_const> ::= <digit> | <digit> <int_const>
+<bool_const> ::= "true" | "false"
+
+<letter> ::= "a" | "b" | "c" | ... | "z" | "A" | "B" | "C" | ... | "Z"
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
