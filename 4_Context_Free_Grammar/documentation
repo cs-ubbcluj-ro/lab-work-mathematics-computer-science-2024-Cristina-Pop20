@@ -1,6 +1,7 @@
 File Overview:
 
-The grammar.txt file defines the syntax of the JavaScript-like minilanguage in a CFG format.
+Syntax of the JavaScript-like minilanguage in a CFG format.
+Properties of a CFG format:
 Non-terminals are enclosed in angle brackets (<>).
 Terminals are either keywords (e.g., "START") or symbolic characters (=).
 Rules are separated by the ::= operator, with alternations (|) providing choices.
@@ -9,6 +10,7 @@ Top-Level Structure:
 
 <program> is the entry point, defining the entire structure of the program.
 It starts with "START", includes a declaration list (<decllist>) and compound statements (<cmpdstmt>), and ends with "END".
+
 Declarations:
 
 The <decllist> defines multiple <declaration> entries, each specifying a <type> and an <identifier>.
